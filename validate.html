@@ -63,7 +63,7 @@
       if(input.length < 2 || input.length > 32)
         return false;
 
-      if(!/^[a-zA-Z ]+$/.test(input))
+      if(!/^[A-Za-z][A-Za-z\s-]*$/.test(input))
         return false;
       
       return true;
@@ -73,7 +73,9 @@
     function is_age_valid(input){
       if(!/^[0-9]+$/.test(input))
         return false;
-      if(input.length < 1 || input.length > 2)
+
+      const age = Number(input);
+      if(age < 1 || age > 100)
         return false;
 
 

@@ -2,7 +2,7 @@ import requests
 from Valid import Valid
 
 '''
-Wi
+This will get data from an external API, validate it, and write valid data to a local file.
 '''
 def main():
   #Get data from an external API
@@ -15,7 +15,8 @@ def main():
 
   print("Writing JSON to file.")
   for obj in response.json():
-    #print(obj)
+    #TODO: You must validate the obj, too.
+    print(obj)
     
     #TODO: validate before write.
     #Valid module contains static validation method stubs
@@ -28,13 +29,13 @@ def main():
     if not Valid.phone(obj[4]):
       continue
 
-    line = obj[0] + " " + obj[3] + " " + obj[4] + '\n'
+    line = obj[0] + "," + obj[3] + "," + obj[4] + '\n'
 
     out_file.write(line)
   
   print("Done.")
 
-  return #end main
+  return #end main()
 
 if __name__ == '__main__':
   main()

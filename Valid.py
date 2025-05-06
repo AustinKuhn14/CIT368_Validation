@@ -46,10 +46,11 @@ class Valid:
       print("Enter numbers for Phone#")
       return False
     #format?
-    reg = r'/^[0-9]{10}$/'
+    reg = r'^\+[0-9]{1,3} \([0-9]{3}\) [0-9]{3}-[0-9]{4}$'
+
     if not re.match(reg,input):
-      print("Invalid phone number try something like 5556667777")
+      print("Invalid phone number try something like 555-666-7777")
       return False
-    #real number?
+   
     
     return True
